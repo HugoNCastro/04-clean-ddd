@@ -5,7 +5,6 @@ import { QuestionComment } from '@/domain/forum/enterprise/entities/question-com
 export class InMemoryQuestionCommentsRepository implements QuestionCommentsRepository {
   public items: QuestionComment[] = []
 
-
   async findManyByQuestionId(questionId: string, { page }: PaginationParams) {
     const questionComments = this.items
       .filter((item) => item.questionId.toString() === questionId)
